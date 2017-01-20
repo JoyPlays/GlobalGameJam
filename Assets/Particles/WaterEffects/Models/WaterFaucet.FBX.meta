@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3cd30427c314b904d8bc315f84506731
+guid: 6ac1e4bc1765a774c9d7bd6655e01d72
 timeCreated: 1472819634
 licenseType: Store
 ModelImporter:
@@ -21,6 +21,8 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
