@@ -3,6 +3,7 @@ using System.Collections;
 
 public class MapActor : MonoBehaviour
 {
+	public float Mana = 0.1f;
 	public EffectClass Effect;
 
 	internal bool Active;

@@ -15,7 +15,10 @@ public class WaterIce : MapActor
 
 	protected override void DoAction()
 	{
-		StartCoroutine(FreezeWatter());
+		if (PlayerControler.Mana >= Mana)
+		{
+			StartCoroutine(FreezeWatter());
+		}
 	}
 
 	IEnumerator FreezeWatter()
