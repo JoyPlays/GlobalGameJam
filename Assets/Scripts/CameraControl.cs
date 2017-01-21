@@ -43,7 +43,7 @@ public class CameraControl : MonoBehaviour
 	{
 		return Type == RotateType.Zero ? 0 : Type == RotateType.Right ? -90 : Type == RotateType.Rear ? 180 : 90;
 	}
-	void FixedUpdate()
+	void Update()
 	{
 		if (Ded)
 		{

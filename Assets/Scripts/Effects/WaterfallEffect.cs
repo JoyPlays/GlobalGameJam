@@ -8,8 +8,6 @@ public class WaterfallEffect : EffectClass
 	public AnimationCurve Path;
 	public Transform Platform;
 
-	internal bool Active;
-
 	public override void SpawnEffect()
 	{
 		
