@@ -15,8 +15,7 @@ public class PlayerControler : MonoBehaviour
 	[Range(0, 50)]
 	public float frictionY = 5;
 	
-	[Header("Effects")]
-	public EffectClass WaterfallEffect;
+
 
 	private CharacterController controller;
 	internal Vector3 velocity;
@@ -37,23 +36,14 @@ public class PlayerControler : MonoBehaviour
 	{
 		if (IsDed) return;
 
-		if (Input.GetKey("1") && controller.isGrounded && Mana >= WaterfallEffect.Mana)
-		{
-			Mana -= WaterfallEffect.Mana;
-			WaterfallEffect.SpawnEffect();
-			velocity.y = 7;
-			return;
-		}
+
 
 		// Grounded states
-		if (controller.isGrounded || WaterfallEffect.Active)
+		if (controller.isGrounded)
 		{
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
-			if (!WaterfallEffect.Active)
-			{
-				velocity.y -= frictionY;
-			} 
+
 					
 
 			// Run Input
