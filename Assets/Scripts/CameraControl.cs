@@ -4,7 +4,8 @@ public enum RotateType
 {
 	Zero,
 	Right,
-	Rear
+	Rear,
+	Left
 }
 public class CameraControl : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class CameraControl : MonoBehaviour
 	}
 	float GetAngle()
 	{
-		return Type == RotateType.Zero ? 0 : Type == RotateType.Right ? -90 : 180;
+		return Type == RotateType.Zero ? 0 : Type == RotateType.Right ? -90 : Type == RotateType.Rear ? 180 : 90;
 	}
 	void FixedUpdate()
 	{

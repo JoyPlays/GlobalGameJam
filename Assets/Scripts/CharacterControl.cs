@@ -36,7 +36,7 @@ public class CharacterControl : MonoBehaviour
 			Rigidbody.constraints = constr | RigidbodyConstraints.FreezePositionZ;
 		} else
 		{
-			force.z = Input.GetAxis("Horizontal") * RunForce;
+			force.z = Input.GetAxis("Horizontal") * RunForce * (CameraControl.Camera.Type == RotateType.Left ? -1 : 1);
 			Rigidbody.constraints = constr | RigidbodyConstraints.FreezePositionX;
 		}
 		Rigidbody.velocity = force;
