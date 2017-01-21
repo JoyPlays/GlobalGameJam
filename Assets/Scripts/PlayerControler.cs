@@ -4,13 +4,14 @@ using System.Collections;
 public class PlayerControler : MonoBehaviour
 {
 	public static float Mana;
+	private Animator anim;
 
 	[Header("Physics")]
 	[Range(0,10)]
 	public float jumpHeight = 5;
-	[Range(0,200)]
+	[Range(0,500)]
 	public float runSpeed = 70;
-	[Range(0,50)]
+	[Range(0,200)]
 	public float frictionX = 10;
 	[Range(0, 50)]
 	public float frictionY = 5;
@@ -30,6 +31,7 @@ public class PlayerControler : MonoBehaviour
 	void Awake()
 	{
 		controller = GetComponent<CharacterController>();
+		anim = GetComponentInChildren<Animator>();
 	}
 
 	void Update()
@@ -44,7 +46,7 @@ public class PlayerControler : MonoBehaviour
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
 
-					
+			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
 			// Run Input
 			Quaternion camRot = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
