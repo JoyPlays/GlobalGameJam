@@ -21,6 +21,13 @@ public class PlayerControler : MonoBehaviour
 	private CharacterController controller;
 	internal Vector3 velocity;
 
+	internal static bool IsDed;
+
+	public static void Ded()
+	{
+		IsDed = true;
+	}
+
 	void Awake()
 	{
 		controller = GetComponent<CharacterController>();
@@ -28,6 +35,7 @@ public class PlayerControler : MonoBehaviour
 
 	void Update()
 	{
+		if (IsDed) return;
 
 		if (Input.GetKey("1") && controller.isGrounded && Mana >= WaterfallEffect.Mana)
 		{
