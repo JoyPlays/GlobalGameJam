@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControler : MonoBehaviour
 {
+	public static float Mana;
+
 	[Header("Physics")]
 	[Range(0,10)]
 	public float jumpHeight = 5;
@@ -27,8 +29,9 @@ public class PlayerControler : MonoBehaviour
 	void Update()
 	{
 
-		if (Input.GetKey("1") && controller.isGrounded)
+		if (Input.GetKey("1") && controller.isGrounded && Mana >= WaterfallEffect.Mana)
 		{
+			Mana -= WaterfallEffect.Mana;
 			WaterfallEffect.SpawnEffect();
 			velocity.y = 7;
 			return;
@@ -39,14 +42,10 @@ public class PlayerControler : MonoBehaviour
 		{
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
-			if (WaterfallEffect.Active)
-			{
-
-				//velocity.y = 7;
-			} else
+			if (!WaterfallEffect.Active)
 			{
 				velocity.y -= frictionY;
-			}
+			} 
 					
 
 			// Run Input
@@ -78,8 +77,7 @@ public class PlayerControler : MonoBehaviour
 			rotor.SetCameraRotation(other.gameObject.tag);
 			return;
 		}
-
-
+		
 		MapActor actor = other.GetComponent<MapActor>();
 		if (!actor) return;
 

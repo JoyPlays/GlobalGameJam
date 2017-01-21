@@ -5,6 +5,8 @@ public class EffectClass : MonoBehaviour
 {
 	internal bool Active;
 
+	public float Mana;
+
 	public virtual void SpawnEffect()
 	{
 

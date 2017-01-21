@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterControl : MonoBehaviour
 {
 
-	public static float Mana;
+	
 
 	[Range(0, 500)]
 	public float JumpForce;

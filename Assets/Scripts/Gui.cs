@@ -18,7 +18,7 @@ public class Gui : MonoBehaviour
 	{
 		if (ManaSlider)
 		{
-			ManaSlider.value = CharacterControl.Mana;
+			ManaSlider.value = PlayerControler.Mana;
 		}
 	}
 }
