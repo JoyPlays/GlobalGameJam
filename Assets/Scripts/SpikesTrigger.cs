@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class SpikesTrigger : MonoBehaviour {
 
-	private void OnTriggerEnter2D(Collider spike)
+	private void OnTriggerEnter(Collider spike)
 	{
-
+		if (spike.gameObject.CompareTag("Player"))
+		{
+			PlayerControler.Ded();
+			print("Collision");
+		}
 	}
 }
