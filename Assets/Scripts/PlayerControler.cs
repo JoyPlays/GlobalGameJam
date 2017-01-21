@@ -7,7 +7,7 @@ public class PlayerControler : MonoBehaviour
 	private Animator anim;
 
 	[Header("Physics")]
-	[Range(0,10)]
+	[Range(0,100)]
 	public float jumpHeight = 5;
 	[Range(0,500)]
 	public float runSpeed = 70;
@@ -23,17 +23,20 @@ public class PlayerControler : MonoBehaviour
 
 	internal static bool IsDed;
 
-	public static void Ded()
-	{
-		IsDed = true;
-	}
+	static PlayerControler instance;
 
 	void Awake()
 	{
 		controller = GetComponent<CharacterController>();
 		anim = GetComponentInChildren<Animator>();
+		instance = this;
 	}
 
+	public static void Ded()
+	{
+		IsDed = true;
+		instance.anim.SetTrigger("Dead");
+	}
 	void Update()
 	{
 		if (IsDed) return;
@@ -46,6 +49,8 @@ public class PlayerControler : MonoBehaviour
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
 
+			velocity.y -= frictionY;
+
 			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
 			// Run Input
@@ -54,7 +59,7 @@ public class PlayerControler : MonoBehaviour
 		}
 		else
 		{
-			velocity += Physics.gravity * Time.deltaTime;
+			velocity += Physics.gravity;
 		}
 
 		// Jump Input
