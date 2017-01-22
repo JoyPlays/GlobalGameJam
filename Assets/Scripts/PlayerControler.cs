@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControler : MonoBehaviour
 {
-	public static float Mana = 0f;
+	public static float Mana = 1f;
 	private Animator anim;
 
 	[Header("Physics")]
@@ -50,8 +50,22 @@ public class PlayerControler : MonoBehaviour
 	{
 		if (IsDed) return;
 
+		if (CameraControl.Camera.Type != RotateType.Last)
+		{
+			transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles;
+		}
+		else
+		{
+			transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles - new Vector3(0, 90, 0);
+		}
 
-		transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles;
+		if (CameraControl.Camera.Type == RotateType.Last)
+		{
+			anim.SetFloat("Speed", 0);
+			return;
+		}
+
+
 		// Grounded states
 		if (controller.isGrounded)
 		{
@@ -62,12 +76,12 @@ public class PlayerControler : MonoBehaviour
 			{ 
 				if (snowSteps.isPlaying != null && controller.isGrounded)
 				{
-					DontDestroyOnLoad(snowSteps);
-					print("NoTDestroyed");
+					//DontDestroyOnLoad(snowSteps);
+					//print("NoTDestroyed");
 				}
 			}
 			velocity.y -= frictionY;
-
+			
 			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
 
 			// Run Input
@@ -115,7 +129,7 @@ public class PlayerControler : MonoBehaviour
 		MapActor actor = other.GetComponent<MapActor>();
 		if (!actor) return;
 
-		if (Input.GetKey(actor.key))
+		if (!string.IsNullOrEmpty(actor.key) && Input.GetKey(actor.key))
 		{
 			if (actor.Mana <= Mana)
 			{

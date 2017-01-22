@@ -5,7 +5,8 @@ public enum RotateType
 	Zero,
 	Right,
 	Rear,
-	Left
+	Left,
+	Last
 }
 public class CameraControl : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class CameraControl : MonoBehaviour
 	}
 	float GetAngle()
 	{
-		return Type == RotateType.Zero ? 0 : Type == RotateType.Right ? -90 : Type == RotateType.Rear ? 180 : 90;
+		return Type == RotateType.Zero ? 0 : Type == RotateType.Right ? -90 : Type == RotateType.Rear ? 180 : Type == RotateType.Last ? 90 : 90;
 	}
 	void Update()
 	{
