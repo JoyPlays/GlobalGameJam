@@ -24,7 +24,7 @@ public class ScaleEffect : MapActor
 		float t = SteamTime;
 		while (t > 0)
 		{
-			float scale = Mathf.Lerp(0, 0.5f, t / SteamTime);
+			float scale = Mathf.Lerp(0.5f, 1, t / SteamTime);
 
 			ScaleTransform.localScale = new Vector3(ScaleTransform.localScale.x, scale, ScaleTransform.localScale.z);
 
