@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerControler : MonoBehaviour
 {
@@ -39,6 +40,13 @@ public class PlayerControler : MonoBehaviour
 	{
 		IsDed = true;
 		instance.anim.SetTrigger("Dead");
+		instance.StartCoroutine(instance.DeadAnim());
+	}
+
+	IEnumerator DeadAnim()
+	{
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene("LoseMenu");
 	}
 
 	public static void Rotate()

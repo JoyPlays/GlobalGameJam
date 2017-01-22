@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class RockFall : MapActor
 {
@@ -38,7 +39,8 @@ public class RockFall : MapActor
 		}
 
 		EndAnction();
-
+		yield return new WaitForSeconds(3);
+		SceneManager.LoadScene("WinScene");
 	}
 
 
