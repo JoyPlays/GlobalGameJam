@@ -9,7 +9,10 @@ public class EffectClass : MonoBehaviour
 
 	public virtual void SpawnEffect()
 	{
-
+		gameObject.SetActive(true);
 	}
-	public virtual void StopEffect() { }
+	public virtual void StopEffect()
+	{
+		gameObject.SetActive(false);
+	}
 }
