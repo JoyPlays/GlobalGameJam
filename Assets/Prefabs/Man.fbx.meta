@@ -1,0 +1,240 @@
+fileFormatVersion: 2
+guid: 87c097b4abec0a948bd199d3fe49147e
+timeCreated: 1485054060
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature.001
+    100002: Base
+    100004: Bone
+    100006: Bone.021
+    100008: Bone.021_end
+    100010: Cube.009
+    100012: Cube.010
+    100014: Cube.011
+    100016: Cube.014
+    100018: Head
+    100020: Head_end
+    100022: L_Arm
+    100024: L_Arm_C
+    100026: L_Arm_C_end
+    100028: L_Feet
+    100030: L_Feet_end
+    100032: L_Finger
+    100034: L_Finger1
+    100036: L_Finger2
+    100038: L_Finger2_end
+    100040: L_Forearm
+    100042: L_Forearm_IK
+    100044: L_Hand
+    100046: L_Hand1
+    100048: L_Hand2
+    100050: L_Hand2_end
+    100052: L_Hip
+    100054: L_Leg
+    100056: L_Leg_IK
+    100058: L_Limb
+    100060: L_Limb_C
+    100062: L_Limb_C_end
+    100064: L_Shoulder
+    100066: //RootNode
+    100068: Neck
+    100070: R_Arm
+    100072: R_Arm_C
+    100074: R_Arm_C_end
+    100076: R_Feet
+    100078: R_Feet_end
+    100080: R_Finger
+    100082: R_Finger1
+    100084: R_Finger2
+    100086: R_Finger2_end
+    100088: R_Forearm
+    100090: R_Forearm_IK
+    100092: R_Hand
+    100094: R_Hand1
+    100096: R_Hand2
+    100098: R_Hand2_end
+    100100: R_Hip
+    100102: R_Leg
+    100104: R_Leg_IK
+    100106: R_Limb
+    100108: R_Limb_C
+    100110: R_Limb_C_end
+    100112: R_Shoulder
+    100114: Spine
+    100116: Spine1
+    100118: Spine2
+    100120: Spine3
+    400000: Armature.001
+    400002: Base
+    400004: Bone
+    400006: Bone.021
+    400008: Bone.021_end
+    400010: Cube.009
+    400012: Cube.010
+    400014: Cube.011
+    400016: Cube.014
+    400018: Head
+    400020: Head_end
+    400022: L_Arm
+    400024: L_Arm_C
+    400026: L_Arm_C_end
+    400028: L_Feet
+    400030: L_Feet_end
+    400032: L_Finger
+    400034: L_Finger1
+    400036: L_Finger2
+    400038: L_Finger2_end
+    400040: L_Forearm
+    400042: L_Forearm_IK
+    400044: L_Hand
+    400046: L_Hand1
+    400048: L_Hand2
+    400050: L_Hand2_end
+    400052: L_Hip
+    400054: L_Leg
+    400056: L_Leg_IK
+    400058: L_Limb
+    400060: L_Limb_C
+    400062: L_Limb_C_end
+    400064: L_Shoulder
+    400066: //RootNode
+    400068: Neck
+    400070: R_Arm
+    400072: R_Arm_C
+    400074: R_Arm_C_end
+    400076: R_Feet
+    400078: R_Feet_end
+    400080: R_Finger
+    400082: R_Finger1
+    400084: R_Finger2
+    400086: R_Finger2_end
+    400088: R_Forearm
+    400090: R_Forearm_IK
+    400092: R_Hand
+    400094: R_Hand1
+    400096: R_Hand2
+    400098: R_Hand2_end
+    400100: R_Hip
+    400102: R_Leg
+    400104: R_Leg_IK
+    400106: R_Limb
+    400108: R_Limb_C
+    400110: R_Limb_C_end
+    400112: R_Shoulder
+    400114: Spine
+    400116: Spine1
+    400118: Spine2
+    400120: Spine3
+    2300000: Cube.009
+    2300002: Cube.010
+    2300004: Cube.011
+    3300000: Cube.009
+    3300002: Cube.010
+    3300004: Cube.011
+    4300000: Cube.014
+    4300002: Cube.011
+    4300004: Cube.010
+    4300006: Cube.009
+    7400000: Armature.001|Cube.001Action
+    7400002: Armature.001|Cube.001Action.001
+    7400004: Armature.001|Cube.001Action.002
+    7400006: Armature.001|Cube.001Action.003
+    7400008: Armature.001|Cube.001Action.004
+    7400010: Armature.001|Cube.001Action.005
+    7400012: Armature.001|Genesis2Male.ShapeAction
+    7400014: Armature.001|Idle
+    7400016: Cube.011|Cube.001Action
+    7400018: Cube.011|Cube.001Action.001
+    7400020: Cube.011|Cube.001Action.002
+    7400022: Cube.011|Cube.001Action.003
+    7400024: Cube.011|Cube.001Action.004
+    7400026: Cube.011|Cube.001Action.005
+    7400028: Cube.011|Genesis2Male.ShapeAction
+    7400030: Cube.010|Cube.001Action
+    7400032: Cube.010|Cube.001Action.001
+    7400034: Cube.010|Cube.001Action.002
+    7400036: Cube.010|Cube.001Action.003
+    7400038: Cube.010|Cube.001Action.004
+    7400040: Cube.010|Cube.001Action.005
+    7400042: Cube.010|Genesis2Male.ShapeAction
+    7400044: Cube.009|Cube.001Action
+    7400046: Cube.009|Cube.001Action.001
+    7400048: Cube.009|Cube.001Action.002
+    7400050: Cube.009|Cube.001Action.003
+    7400052: Cube.009|Cube.001Action.004
+    7400054: Cube.009|Cube.001Action.005
+    7400056: Cube.009|Genesis2Male.ShapeAction
+    9500000: //RootNode
+    13700000: Cube.014
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

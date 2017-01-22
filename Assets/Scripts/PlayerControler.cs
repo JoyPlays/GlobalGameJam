@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControler : MonoBehaviour
 {
-	public static float Mana=0f;
+	public static float Mana=1f;
 	private Animator anim;
 
 	[Header("Physics")]
@@ -74,6 +74,7 @@ public class PlayerControler : MonoBehaviour
 		{
 			//Debug.Log("Jump is ground:" + controller.isGrounded);
 			velocity.y = jumpHeight;
+			anim.SetTrigger("Jump");
 		}
 
 		// Move the controller
