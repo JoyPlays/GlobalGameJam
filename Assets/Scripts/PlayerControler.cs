@@ -37,12 +37,18 @@ public class PlayerControler : MonoBehaviour
 		IsDed = true;
 		instance.anim.SetTrigger("Dead");
 	}
+
+	public static void Rotate()
+	{
+
+	}
+
 	void Update()
 	{
 		if (IsDed) return;
 
 
-
+		transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles ;
 		// Grounded states
 		if (controller.isGrounded)
 		{
@@ -56,6 +62,7 @@ public class PlayerControler : MonoBehaviour
 			// Run Input
 			Quaternion camRot = Quaternion.Euler(0, Camera.main.transform.eulerAngles.y, 0);
 			velocity += camRot * new Vector3(Input.GetAxis("Horizontal"), 0, 0) * runSpeed * Time.deltaTime;
+
 		}
 		else
 		{
