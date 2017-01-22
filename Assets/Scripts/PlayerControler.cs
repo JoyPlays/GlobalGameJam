@@ -115,8 +115,15 @@ public class PlayerControler : MonoBehaviour
 
 		if (Input.GetKey(actor.key))
 		{
-			actor.Action();
-			return;
+			if (actor.Mana >= Mana)
+			{
+				anim.SetTrigger("Shoot");
+				actor.Action();
+			} else
+			{
+				anim.SetTrigger("Failed");
+			}
+			
 		}
 	}
 }
