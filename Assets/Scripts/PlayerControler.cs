@@ -16,10 +16,6 @@ public class PlayerControler : MonoBehaviour
 	public float frictionX = 10;
 	[Range(0, 50)]
 	public float frictionY = 5;
-
-	[Header("Sound")]
-	public AudioSource snowSteps;
-	public AudioSource freezeIce;
 	
 
 	private CharacterController controller;
@@ -80,14 +76,6 @@ public class PlayerControler : MonoBehaviour
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 
-			if (snowSteps != null)
-			{ 
-				if (snowSteps.isPlaying != null && controller.isGrounded)
-				{
-					//DontDestroyOnLoad(snowSteps);
-					//print("NoTDestroyed");
-				}
-			}
 			velocity.y -= frictionY;
 			
 			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
