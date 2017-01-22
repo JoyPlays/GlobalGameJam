@@ -7,14 +7,11 @@ public class WaterIce : MapActor
 	public float FreezeTime;
 	public float UnfreezeTime = 3;
 
-	public Material WaterMaterial;
-	public Material IceMaterial;
-
 	public GameObject Colliders;
 
 	public void Update()
 	{
-		GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(Time.time * 0.1f, 0));
+		//GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(Time.time * 0.1f, 0));
 	}
 
 	protected override void DoAction()

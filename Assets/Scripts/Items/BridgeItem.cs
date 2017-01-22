@@ -14,7 +14,7 @@ public class BridgeItem : MonoBehaviour
 	{
 		
 		if (!other.gameObject.CompareTag("Player")) return;
-		Debug.Log(other.gameObject.tag);
+		
 		if (Active) return;
 		Active = true;
 		StartCoroutine(Crash());
@@ -23,7 +23,7 @@ public class BridgeItem : MonoBehaviour
 	IEnumerator Crash()
 	{
 		yield return new WaitForSeconds(0.05f);
-		Debug.Log("Set gravity");
+		
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
 		GetComponent<Rigidbody>().AddForce(0, -2000, 0);

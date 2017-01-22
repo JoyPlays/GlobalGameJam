@@ -82,7 +82,7 @@ public class PlayerControler : MonoBehaviour
 
 	public void OnTriggerEnter(Collider other)
 	{
-		Debug.Log("Trigger enter");
+		Debug.Log("Trigger enter:" + other.name);
 		CameraRotor rotor = other.GetComponentInParent<CameraRotor>();
 		if (rotor)
 		{
