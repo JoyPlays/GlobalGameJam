@@ -25,7 +25,7 @@ public class Fading : MonoBehaviour {
 		}
 		canvasgroup.interactable = false;
 		yield return new WaitForSeconds(2);
-		Application.LoadLevel("MainGame");
+		Application.LoadLevel("Intro");
 	}
 
 	
