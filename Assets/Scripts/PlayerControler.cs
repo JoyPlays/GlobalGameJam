@@ -16,7 +16,10 @@ public class PlayerControler : MonoBehaviour
 	[Range(0, 50)]
 	public float frictionY = 5;
 
-
+	[Header("Sound")]
+	public AudioSource snowSteps;
+	public AudioSource freezeIce;
+	
 
 	private CharacterController controller;
 	internal Vector3 velocity;
@@ -55,6 +58,12 @@ public class PlayerControler : MonoBehaviour
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 
+			if (snowSteps.isPlaying != null && controller.isGrounded)
+			{
+				DontDestroyOnLoad(snowSteps);
+				print("NoTDestroyed");
+			}
+
 			velocity.y -= frictionY;
 
 			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
@@ -67,6 +76,7 @@ public class PlayerControler : MonoBehaviour
 		else
 		{
 			velocity += Physics.gravity;
+			snowSteps.Stop();
 		}
 
 		// Jump Input

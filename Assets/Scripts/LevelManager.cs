@@ -8,20 +8,15 @@ public class LevelManager : MonoBehaviour {
 
 	Fading fading;
 
-	public void LoadLevel()
+	public void LoadGame()
     {
 		fading.FadeMe();
     }
 
-	public void LoadOptions()
+	public void LoadLevel(string name)
 	{
-		Application.LoadLevel("OptionsMenu");
+		Application.LoadLevel(name);
 	}
-	
-	public void LoadMenu()
-	{
-		Application.LoadLevel("MainMenu");
-	} 
 
 	public void Quit()
 	{ 
@@ -32,4 +27,6 @@ public class LevelManager : MonoBehaviour {
 	{
 		AudioListener.volume = value;		
 	}
+	
+	
 }

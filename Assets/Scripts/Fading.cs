@@ -7,9 +7,6 @@ public class Fading : MonoBehaviour {
 
 	LevelManager levelmanager;
 
-	public Button startButton;
-	bool pressed = true;
-
 	public void FadeMe()
 	{
 		//if(startButton.onClick )
@@ -28,7 +25,7 @@ public class Fading : MonoBehaviour {
 		}
 		canvasgroup.interactable = false;
 		yield return new WaitForSeconds(2);
-		Application.LoadLevel("MapGame");
+		Application.LoadLevel("MainGame");
 	}
 
 	
