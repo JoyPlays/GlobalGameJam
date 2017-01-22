@@ -83,6 +83,9 @@ ModelImporter:
     100150: Spine2
     100152: Spine3
     100154: ZBrush_defualt_group.000
+    100156: Cube.001
+    100158: Cube.002
+    100160: Cube.003
     400000: Armature
     400002: //RootNode
     400004: Base
@@ -161,8 +164,20 @@ ModelImporter:
     400150: Spine2
     400152: Spine3
     400154: ZBrush_defualt_group.000
+    400156: Cube.001
+    400158: Cube.002
+    400160: Cube.003
+    2300000: Cube.001
+    2300002: Cube.002
+    2300004: Cube.003
+    3300000: Cube.001
+    3300002: Cube.002
+    3300004: Cube.003
     4300000: Cube.007
     4300002: ZBrush_defualt_group.000
+    4300004: Cube.003
+    4300006: Cube.002
+    4300008: Cube.001
     7400000: Armature|ArmatureAction
     7400002: Armature|Cube.001Action
     7400004: Armature|Cube.001Action.001

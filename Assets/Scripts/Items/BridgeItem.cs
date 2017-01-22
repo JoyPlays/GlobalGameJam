@@ -22,9 +22,10 @@ public class BridgeItem : MonoBehaviour
 
 	IEnumerator Crash()
 	{
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(0.05f);
 		Debug.Log("Set gravity");
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
+		GetComponent<Rigidbody>().AddForce(0, -2000, 0);
 	}
 }
