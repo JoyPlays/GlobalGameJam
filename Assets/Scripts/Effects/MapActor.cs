@@ -7,8 +7,10 @@ public class MapActor : MonoBehaviour
 	public EffectClass Effect;
 
 	internal bool Active;
+	internal string key;
 
-	public void Action() {
+	public void Action()
+	{
 		if (Active) return;
 		Active = true;
 		if (Effect) Effect.SpawnEffect();
@@ -20,4 +22,6 @@ public class MapActor : MonoBehaviour
 		if (Effect) Effect.StopEffect();
 	}
 	protected virtual void DoAction() { }
+
+	
 }

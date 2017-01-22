@@ -10,7 +10,10 @@ public class WaterIce : MapActor
 	public GameObject Colliders;
 
 
-
+	void Start()
+	{
+		key = "1";
+	}
 	protected override void DoAction()
 	{
 		if (PlayerControler.Mana >= Mana)

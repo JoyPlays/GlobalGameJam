@@ -3,19 +3,19 @@ using System.Collections;
 
 public class PlayerControler : MonoBehaviour
 {
-	public static float Mana=1f;
+	public static float Mana = 0f;
 	private Animator anim;
 
 	[Header("Physics")]
-	[Range(0,100)]
+	[Range(0, 100)]
 	public float jumpHeight = 5;
-	[Range(0,500)]
+	[Range(0, 500)]
 	public float runSpeed = 70;
-	[Range(0,200)]
+	[Range(0, 200)]
 	public float frictionX = 10;
 	[Range(0, 50)]
 	public float frictionY = 5;
-	
+
 
 
 	private CharacterController controller;
@@ -52,8 +52,8 @@ public class PlayerControler : MonoBehaviour
 		// Grounded states
 		if (controller.isGrounded)
 		{
-				velocity.z -= velocity.z * frictionX * Time.deltaTime;
-				velocity.x -= velocity.x * frictionX * Time.deltaTime;
+			velocity.z -= velocity.z * frictionX * Time.deltaTime;
+			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 
 			velocity.y -= frictionY;
 
@@ -90,11 +90,23 @@ public class PlayerControler : MonoBehaviour
 			rotor.SetCameraRotation(other.gameObject.tag);
 			return;
 		}
-		
+
+		//MapActor actor = other.GetComponent<MapActor>();
+		//if (!actor) return;
+
+
+		//actor.Action();
+	}
+
+	public void OnTriggerStay(Collider other)
+	{
 		MapActor actor = other.GetComponent<MapActor>();
 		if (!actor) return;
 
-
-		actor.Action();
+		if (Input.GetKey(actor.key))
+		{
+			actor.Action();
+			return;
+		}
 	}
 }
