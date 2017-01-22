@@ -26,6 +26,6 @@ public class BridgeItem : MonoBehaviour
 		
 		GetComponent<Rigidbody>().useGravity = true;
 		GetComponent<Rigidbody>().isKinematic = false;
-		GetComponent<Rigidbody>().AddForce(0, -2000, 0);
+		GetComponent<Rigidbody>().AddForce(0, -4000, 0);
 	}
 }

@@ -21,7 +21,7 @@ public class CameraControl : MonoBehaviour
 	[Range(0, 1)]
 	public float RotateSpeed = 0.5f;
 
-	internal RotateType Type;
+	public RotateType Type;
 
 	Vector3 targetPos;
 	float interpVelocity;

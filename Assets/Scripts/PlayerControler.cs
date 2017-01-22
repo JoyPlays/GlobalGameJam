@@ -58,12 +58,14 @@ public class PlayerControler : MonoBehaviour
 			velocity.z -= velocity.z * frictionX * Time.deltaTime;
 			velocity.x -= velocity.x * frictionX * Time.deltaTime;
 
-			if (snowSteps.isPlaying != null && controller.isGrounded)
-			{
-				DontDestroyOnLoad(snowSteps);
-				print("NoTDestroyed");
+			if (snowSteps != null)
+			{ 
+				if (snowSteps.isPlaying != null && controller.isGrounded)
+				{
+					DontDestroyOnLoad(snowSteps);
+					print("NoTDestroyed");
+				}
 			}
-
 			velocity.y -= frictionY;
 
 			anim.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal")));
