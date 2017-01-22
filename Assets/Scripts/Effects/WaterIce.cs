@@ -5,13 +5,17 @@ public class WaterIce : MapActor
 {
 
 	public float FreezeTime;
+	public float UnfreezeTime = 3;
 
 	public Material WaterMaterial;
 	public Material IceMaterial;
 
 	public GameObject Colliders;
 
-	
+	public void Update()
+	{
+		GetComponent<Renderer>().material.SetTextureOffset("_MainTex", new Vector2(Time.time * 0.1f, 0));
+	}
 
 	protected override void DoAction()
 	{
@@ -27,22 +31,35 @@ public class WaterIce : MapActor
 		float t = FreezeTime;
 
 		Renderer render = GetComponent<Renderer>();
-		
+
+		Color c = render.material.color;
 		while (t > 0)
 		{
-			float myOffset = Mathf.Lerp(0, 0.5f, 1 - t / FreezeTime);
-			//Debug.Log(myOffset);
-			render.material.SetFloat("_MoveSpeedU", 0.5f - myOffset);
-			render.material.SetFloat("_MoveSpeedV", myOffset - 0.5f);
+			c.a = Mathf.Lerp(0, 1, t / FreezeTime);
+			render.material.color = c;
 			t -= Time.deltaTime;
 			yield return null;
 		}
-		yield return new WaitForSeconds(1);
 
-		render.material = IceMaterial;
+
 		Colliders.SetActive(true);
 		EndAnction();
+
+		yield return new WaitForSeconds(UnfreezeTime);
+		Colliders.SetActive(false);
+		t = 1;
+		while (t > 0)
+		{
+			c.a = Mathf.Lerp(0, 1, 1 - t / FreezeTime);
+			render.material.color = c;
+			t -= Time.deltaTime;
+			yield return null;
+		}
+
+		c.a = 1;
+		render.material.color = c;
+		Active = false;
 	}
 
-	
+
 }

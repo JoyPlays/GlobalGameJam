@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerControler : MonoBehaviour
 {
-	public static float Mana;
+	public static float Mana=0f;
 	private Animator anim;
 
 	[Header("Physics")]
