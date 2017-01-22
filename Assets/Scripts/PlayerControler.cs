@@ -88,7 +88,6 @@ public class PlayerControler : MonoBehaviour
 		else
 		{
 			velocity += Physics.gravity;
-			snowSteps.Stop();
 		}
 
 		// Jump Input
