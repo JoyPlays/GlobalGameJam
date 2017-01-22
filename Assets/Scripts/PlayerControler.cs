@@ -48,12 +48,12 @@ public class PlayerControler : MonoBehaviour
 		if (IsDed) return;
 
 
-		transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles ;
+		transform.localEulerAngles = CameraControl.Camera.transform.localEulerAngles;
 		// Grounded states
 		if (controller.isGrounded)
 		{
-			velocity.x -= velocity.x * frictionX * Time.deltaTime;
-			velocity.z -= velocity.z * frictionX * Time.deltaTime;
+				velocity.z -= velocity.z * frictionX * Time.deltaTime;
+				velocity.x -= velocity.x * frictionX * Time.deltaTime;
 
 			velocity.y -= frictionY;
 
