@@ -4,6 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneUi : MonoBehaviour
 {
+	void Update()
+	{
+		if (Input.anyKey)
+		{
+			LoadGame();
+		}
+	}
+
 
 	public void LoadGame()
 	{

@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour {
 
 	public void LoadLevel(string name)
 	{
+		PlayerControler.IsDed = false;
+		PlayerControler.Mana = 0;
 		Application.LoadLevel(name);
 	}
 

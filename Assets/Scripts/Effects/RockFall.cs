@@ -7,6 +7,7 @@ public class RockFall : MapActor
 
 	public Transform Rocks;
 	public GameObject[] Pilars;
+	public Animator BossAnim;
 
 	void Start()
 	{
@@ -39,8 +40,13 @@ public class RockFall : MapActor
 		}
 
 		EndAnction();
+
+		yield return new WaitForSeconds(0.2f);
+		if (BossAnim) BossAnim.SetTrigger("Ded");
+
 		yield return new WaitForSeconds(3);
-		SceneManager.LoadScene("WinScene");
+		SceneManager.LoadScene("WinMenu");
+		
 	}
 
 
